@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obj Prototype, Class Constructor and İnheritance</title>
+</head>
+<body>
+    <script>
+
+//Object Prototype
+
+        let person={
+            name:"sefa",
+            surname: "yüzüak",
+            fullname: function (){
+               console.log( `fullName : ${this.name} ${this.surname}`);
+            }
+        };
+        person.fullname();
+
+//Class Constructor   
+
+    class Car {
+        constructor(model, name) {
+            this.model = model;
+            this.name = name;
+        }
+        start() {
+            console.log(this.name + " engine started");
+        }     
+    }
+// İnheritance
+
+    class ElectricCar extends Car {
+        start() {
+            return super.start() + " Battery at 95%.";
+        }
+    }
+
+    let tesla = new ElectricCar("Tesla", "Model 3");
+        tesla.start();
+            
+    let car= new Car('ford', 'mondeo');
+        car.start();
+    
+   
+    </script>
+</body>
+</html>
